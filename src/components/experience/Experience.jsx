@@ -17,7 +17,7 @@ const Experience = () => {
           <h3>Backend-Focused Full-Stack Developer</h3>
           <div className="experience__content">
             <article className="experience__details">
-              <FaPhp className="experience__details-icon" style={{ color: "#777BB4" }} />
+              <FaPhp className="experience__details-icon" style={{ color: "#45a8f8ff" }} />
               <h4>PHP</h4>
             </article>
 
@@ -27,12 +27,12 @@ const Experience = () => {
             </article>
 
             <article className="experience__details">
-              <SiMysql className="experience__details-icon" style={{ color: "#4479A1" }} />
+              <SiMysql className="experience__details-icon" style={{ color: "#45a8f8ff" }} />
               <h4>MySQL</h4>
             </article>
 
             <article className="experience__details">
-              <SiPostgresql style={{ color: "#336791" }} className="experience__details-icon" />
+              <SiPostgresql style={{ color: "#45a8f8ff" }} className="experience__details-icon" />
               <h4>PostgreSQL</h4>
             </article>
 
