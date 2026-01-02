@@ -1,70 +1,83 @@
 .experience__container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
 }
 
+/* Main experience wrapper */
 .experience__container > div {
-    background: var(--color-bg-variant);
-    padding: 2.4rem 5rem;
-    border-radius: 2rem;
-    border: 1px solid transparent;
-    transition: var(--transition);
-    width: 60%;
-    margin: 0 auto;
+  background: var(--color-bg-variant);
+  padding: 2.4rem 5rem;
+  border-radius: 2rem;
+  border: 1px solid transparent;
+  transition: var(--transition);
+
+  width: 100%;
+  max-width: 1100px; /* increased width */
+  margin: 0 auto;
 }
 
 .experience__container > div:hover {
-    background: transparent;
-    border-color: var(--color-primary-variant);
-    cursor: default;
+  background: transparent;
+  border-color: var(--color-primary-variant);
+  cursor: default;
 }
 
 .experience__container > div h3 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-primary);
 }
 
+/* Skills grid */
 .experience__content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
 }
 
+/* Individual skill box */
 .experience__details {
-    display: flex;
-    gap: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: center;
+  background: transparent;
+  transition: all 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+.experience__details:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-4px);
+}
+
+/* Tech icons */
 .experience__details-icon {
-    margin-top: 6px;
-    color: var(--color-primary);
+  font-size: 2.2rem;
+  margin-bottom: 0.6rem;
 }
 
-@media screen and (max-width: 1024px){
-    .experience__container {
-        grid-template-columns: 1fr;
-    }
-
-    .experience__container > div {
-        width: 80%;
-        margin: 0 auto;
-        padding: 2rem;
-    }
-
-    .experience__content p {
-        padding: 1rem;
-    }
+/* Tablet */
+@media screen and (max-width: 1024px) {
+  .experience__container > div {
+    max-width: 900px;
+    padding: 2rem;
+  }
 }
-  
-@media screen and (max-width: 600px){
-    .experience__container {
-        gap: 1rem;
-    }
 
-    .experience__container > div {
-        width: 100%;
-        padding: 2rem 1rem;
-    }
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .experience__container {
+    gap: 1rem;
+  }
+
+  .experience__container > div {
+    max-width: 100%;
+    padding: 2rem 1rem;
+  }
 }

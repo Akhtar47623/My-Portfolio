@@ -4,6 +4,7 @@ import React, { useRef, useState } from 'react';
 
 import { MdOutlineEmail } from 'react-icons/md';
 import emailjs from '@emailjs/browser';
+import { SiWhatsapp } from 'react-icons/si';
 
 const Contact = () => {
   const [message, setMessage] = useState(false);
@@ -39,14 +40,39 @@ const Contact = () => {
       <h2>Contact Me</h2>
       <div className="container contact__container">
         <div className="contact__options">
+          {/* Email Option */}
           <article className="contact__option">
             <MdOutlineEmail className="contact__option-icon" />
             <h4>Email</h4>
             <h5>waheed47623@gmail.com</h5>
-            <a href="mailto:waheed47623@gmail.com">Send a message</a>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=waheed47623@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Send a message
+            </a>
+
+          </article>
+
+
+          {/* WhatsApp Option */}
+          <article className="contact__option">
+            <SiWhatsapp className="contact__option-icon" style={{ color: "#25D366" }} />
+            <h4>WhatsApp</h4>
+            <h5>+92 3443634794</h5>
+            <a
+              href="https://wa.me/923443634794"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Send a message
+            </a>
           </article>
         </div>
-        <form ref={formRef} onSubmit={handleSubmit}>
+
+        {/* Optional Form */}
+        <form action="https://formsubmit.co/waheed47623@gmail.com" method="POST">
           <input
             type="text"
             placeholder="Your Full Name"
@@ -71,6 +97,7 @@ const Contact = () => {
           {message && <span>Thanks, I'll reply ASAP :)</span>}
         </form>
       </div>
+
     </section>
   );
 };

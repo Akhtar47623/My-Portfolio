@@ -1,57 +1,73 @@
 .portfolio__container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards on desktop */
+  gap: 2.5rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .portfolio__item {
-    background: var(--color-bg-variant);
-    padding: 1.3rem;
-    border-radius: 2rem;
-    border: 1px solid transparent;
-    transition: var(--transition);
+  background: var(--color-bg-variant);
+  padding: 1.5rem;
+  border-radius: 2rem;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .portfolio__item:hover {
-    border-color: var(--color-primary-variant);
-    background: transparent;
+  border-color: var(--color-primary-variant);
+  background: transparent;
 }
 
 .portfolio__item-image {
-    border-radius: 1.5rem;
-    overflow: hidden;
-    height: 30%;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  width: 100%;
+  height: auto; /* responsive height */
 }
 
 .portfolio__item h3 {
-    margin: 2rem 0;
+  margin: 1.5rem 0 1rem;
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 .portfolio__item p {
-    margin: 0 0 1.2rem 0;
-    font-size: 0.9rem;
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+  text-align: center;
 }
 
 .portfolio__item-cta {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem; 
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 .portfolio__item-content {
-    height: 40%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-@media screen and (max-width: 1024px){
-    .portfolio__container {
-        grid-template-columns: 1fr 1fr;
-        gap: 1.2rem;
-    }
+/* Tablets */
+@media screen and (max-width: 1024px) {
+  .portfolio__container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    gap: 1.5rem;
+  }
 }
-  
-@media screen and (max-width: 600px){
-    .portfolio__container {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .portfolio__container {
+    grid-template-columns: 1fr; /* 1 card per row */
+    gap: 1rem;
+  }
 }
