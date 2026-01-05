@@ -5,7 +5,7 @@ import IMG2 from "../../assets/chef-portal.png";
 import IMG3 from "../../assets/marketing.png";
 import IMG4 from "../../assets/charity.png";
 import IMG5 from "../../assets/health_care.png";
-import IMG6 from "../../assets/cloves.png";
+import VID6 from "../../assets/cloves.mp4";
 import React from "react";
 
 //Portfolio function
@@ -38,7 +38,7 @@ const Portfolio = () => {
       description: "This charity website is a full-stack web application that enables users to donate online using PayPal and Stripe payment gateways. It includes secure payment processing, responsive UI, donation management, and a scalable backend architecture.",
       technologies: "HTML | CSS | JavaScript | Laravel | MySQL",
       link: "https://demo-customlinks.com/nationempower_dev/",
-      github: "https://github.com/Rasif-Taghizada/FS-Code-Task",
+      github: "https://github.com/Akhtar47623/nation_empower",
     },
     {
       id: 4,
@@ -63,12 +63,12 @@ const Portfolio = () => {
     {
       id: 6,
       title: "ClovesRX Global — Prescription Delivery",
-      img: IMG6,
+      video: VID6,
       description:
         "A prescription delivery platform built to support secure and on-time medication delivery for pharmacies across Southern California, helping streamline prescription fulfillment and improve patient access to essential medications.",
       technologies: "Html | CSS | JavaScript | Ajax | PHP | Laravel | MySQL",
-      link: "https://fs-poster-project.vercel.app/",
-      github: "https://github.com/Rasif-Taghizada/Fs-Poster-Project",
+      link: "#",
+      github: "https://github.com/Akhtar47623/cloves",
     },
   ];
 
@@ -81,7 +81,27 @@ const Portfolio = () => {
         {soloProjects.map((pro) => (
           <article className="portfolio__item" key={pro.id}>
             <div className="portfolio__item-image">
-              <img src={pro.img} alt={pro.title} />
+              {/* <img src={pro.img} alt={pro.title} /> */}
+              <div className="portfolio__item-image">
+                {pro.video ? (
+                  <video
+                    src={pro.video}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    poster={pro.poster}
+                    className="portfolio__media"
+                  />
+                ) : (
+                  <img
+                    src={pro.img}
+                    alt={pro.title}
+                    className="portfolio__media"
+                  />
+                )}
+              </div>
+
+
             </div>
             <div className="portfolio__item-content">
               <h3>{pro.title}</h3>
